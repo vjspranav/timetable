@@ -1,6 +1,8 @@
 {
-  "title": "Material demo",
+  "title": "TimeTable IIIT-H",
+  "homepage": "http://iiitimetable.github.io/",
   "devDependencies": {
+    "gh-pages": "^3.1.0",
     "react-scripts": "latest"
   },
   "description": "https://github.com/mui-org/material-ui/blob/master/docs/src/pages/components/tables/BasicTable.js",
@@ -14,7 +16,10 @@
     "format": "prettier \"src/**/*.{js,html}\" --write",
     "lint": "eslint \"src/**/*.{js, jsx}\" --quiet",
     "dev": "parcel src/index.html",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "parcel index.html",
+    "predeploy": "del dist && parcel build src/index.html --public-url /timetable",
+    "deploy": "gh-pages -d dist"
   },
   "author": "",
   "license": "ISC",
