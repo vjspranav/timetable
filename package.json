@@ -18,7 +18,7 @@
     "dev": "parcel src/index.html",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "parcel index.html",
-    "predeploy": "del dist && parcel build src/index.html --public-url /timetable",
+    "predeploy": "del dist && parcel build src/index.html",
     "deploy": "gh-pages -d dist"
   },
   "author": "",
