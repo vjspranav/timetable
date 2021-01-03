@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Table from "@material-ui/core/Table";
 import TableBody from "@material-ui/core/TableBody";
@@ -13,96 +13,82 @@ const useStyles = makeStyles({
     minWidth: 650,
   },
 });
-var h1 = true;
-var h2 = false;
+
 function createData(day, s1, s2, s3, s4, s5, s6) {
   return { day, s1, s2, s3, s4, s5, s6 };
-}
-
-if (h2 == true) {
-  monthu.s1 = monthu.s1_h2;
-  monthu.s2 = monthu.s2_h2;
-  monthu.s3 = monthu.s3_h2;
-  monthu.s4 = monthu.s4_h2;
-  monthu.s5 = monthu.s5_h2;
-  monthu.s6 = monthu.s6_h2;
-
-  tuefri.s1 = tuefri.s1_h2;
-  tuefri.s2 = tuefri.s2_h2;
-  tuefri.s3 = tuefri.s3_h2;
-  tuefri.s4 = tuefri.s4_h2;
-  tuefri.s5 = tuefri.s5_h2;
-  tuefri.s6 = tuefri.s6_h2;
-
-  wedsat.s1 = wedsat.s1_h2;
-  wedsat.s2 = wedsat.s2_h1;
-  wedsat.s3 = wedsat.s3_h2;
-  wedsat.s4 = wedsat.s4_h2;
-  wedsat.s5 = wedsat.s5_h2;
-  wedsat.s6 = wedsat.s6_h2;
 }
 
 const rows = [
   createData(
     "Monday",
-    monthu.s1,
-    monthu.s2,
-    monthu.s3,
-    monthu.s4,
-    monthu.s5,
-    monthu.s6
+    [monthu.s1, monthu.s1_h2],
+    [monthu.s2, monthu.s2_h2],
+    [monthu.s3, monthu.s3_h2],
+    [monthu.s4, monthu.s4_h2],
+    [monthu.s5, monthu.s5_h2],
+    [monthu.s6, monthu.s6_h2]
   ),
   createData(
     "Tuesday",
-    tuefri.s1,
-    tuefri.s2,
-    tuefri.s3,
-    tuefri.s4,
-    tuefri.s5,
-    tuefri.s6
+    [tuefri.s1, tuefri.s1_h2],
+    [tuefri.s2, tuefri.s2_h2],
+    [tuefri.s3, tuefri.s3_h2],
+    [tuefri.s4, tuefri.s4_h2],
+    [tuefri.s5, tuefri.s5_h2],
+    [tuefri.s6, tuefri.s6_h2]
   ),
   createData(
     "Wednesday",
-    wedsat.s1,
-    wedsat.s2,
-    wedsat.s3,
-    wedsat.s4,
-    wedsat.s5,
-    wedsat.s6
+    [wedsat.s1, wedsat.s1_h2],
+    [wedsat.s2, wedsat.s2_h2],
+    [wedsat.s3, wedsat.s3_h2],
+    [wedsat.s4, wedsat.s4_h2],
+    [wedsat.s5, wedsat.s5_h2],
+    [wedsat.s6, wedsat.s6_h2]
   ),
   createData(
     "Thursday",
-    monthu.s1,
-    monthu.s2,
-    monthu.s3,
-    monthu.s4,
-    monthu.s5,
-    monthu.s6
+    [monthu.s1, monthu.s1_h2],
+    [monthu.s2, monthu.s2_h2],
+    [monthu.s3, monthu.s3_h2],
+    [monthu.s4, monthu.s4_h2],
+    [monthu.s5, monthu.s5_h2],
+    [monthu.s6, monthu.s6_h2]
   ),
   createData(
     "Friday",
-    tuefri.s1,
-    tuefri.s2,
-    tuefri.s3,
-    tuefri.s4,
-    tuefri.s5,
-    tuefri.s6
+    [tuefri.s1, tuefri.s1_h2],
+    [tuefri.s2, tuefri.s2_h2],
+    [tuefri.s3, tuefri.s3_h2],
+    [tuefri.s4, tuefri.s4_h2],
+    [tuefri.s5, tuefri.s5_h2],
+    [tuefri.s6, tuefri.s6_h2]
   ),
   createData(
     "Saturday",
-    wedsat.s1,
-    wedsat.s2,
-    wedsat.s3,
-    wedsat.s4,
-    wedsat.s5,
-    wedsat.s6
+    [wedsat.s1, wedsat.s1_h2],
+    [wedsat.s2, wedsat.s2_h2],
+    [wedsat.s3, wedsat.s3_h2],
+    [wedsat.s4, wedsat.s4_h2],
+    [wedsat.s5, wedsat.s5_h2],
+    [wedsat.s6, wedsat.s6_h2]
   ),
 ];
 
 export default function BasicTable() {
   const classes = useStyles();
 
+  const [sem, setSem] = useState(0);
+
   return (
+    <>
+    <div>
+      Select sem:
+      <select value={sem} onChange={(event)=>{setSem(event.target.value)}}>
+        <option value={0}>H1</option>
+        <option value={1}>H2</option>
+      </select>
+    </div>
     <TableContainer component={Paper}>
       <Table className={classes.table} aria-label="simple table">
         <TableHead>
@@ -122,16 +108,17 @@ export default function BasicTable() {
               <TableCell component="th" scope="row">
                 {row.day}
               </TableCell>
-              <TableCell align="center">{row.s1}</TableCell>
-              <TableCell align="center">{row.s2}</TableCell>
-              <TableCell align="center">{row.s3}</TableCell>
-              <TableCell align="center">{row.s4}</TableCell>
-              <TableCell align="center">{row.s5}</TableCell>
-              <TableCell align="center">{row.s6}</TableCell>
+              <TableCell align="center">{row.s1[sem]}</TableCell>
+              <TableCell align="center">{row.s2[sem]}</TableCell>
+              <TableCell align="center">{row.s3[sem]}</TableCell>
+              <TableCell align="center">{row.s4[sem]}</TableCell>
+              <TableCell align="center">{row.s5[sem]}</TableCell>
+              <TableCell align="center">{row.s6[sem]}</TableCell>
             </TableRow>
           ))}
         </TableBody>
       </Table>
     </TableContainer>
+    </>
   );
 }
