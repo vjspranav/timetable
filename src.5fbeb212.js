@@ -316,4 +316,4 @@ var r,e;module.exports=require("./factoryWithThrowingShims")();
 },{"react":"n8MK","@material-ui/core/styles":"UUDD","@material-ui/core/Table":"Amxx","@material-ui/core/TableBody":"cmi3","@material-ui/core/TableCell":"lprt","@material-ui/core/TableContainer":"qdnS","@material-ui/core/TableHead":"BYgd","@material-ui/core/TableRow":"kIQr","@material-ui/core/Paper":"mtQp"}],"Focm":[function(require,module,exports) {
 "use strict";var e=u(require("react")),r=u(require("react-dom")),t=u(require("./demo"));function u(e){return e&&e.__esModule?e:{default:e}}r.default.render(e.default.createElement(t.default,null),document.querySelector("#root"));
 },{"react":"n8MK","react-dom":"NKHc","./demo":"lgAh"}]},{},["Focm"], null)
-//# sourceMappingURL=iiitimetable.github.io/src.5fbeb212.js.map
+//# sourceMappingURL=/timetable/src.5fbeb212.js.map
