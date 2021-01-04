@@ -103,7 +103,7 @@ export default function BasicTable() {
                           } else {
                             tmp = curCourse.name;
                           }
-                          if (item.tut) {
+                          if (item.tut && tmp) {
                             tmp = `${tmp} - Tutorial`;
                           }
                         }
