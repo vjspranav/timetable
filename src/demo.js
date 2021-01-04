@@ -8,17 +8,15 @@ import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
 
-const Checkbox = ({ fnIct, title = "", checked = false }) => (
-  <label>
-    <input
-      onClick={(e) => {
-        if (fnIct !== undefined) fnIct(e.target.checked);
-      }}
-      type="checkbox"
-      checked={checked}
-    />
-    {title}
-  </label>
+import timetableData, { coursesData } from "./data";
+
+const Checkbox = (props) => (
+  <div>
+    <label>
+      <input type="checkbox" />
+      {props.title}
+    </label>
+  </div>
 );
 
 const useStyles = makeStyles({
@@ -27,78 +25,10 @@ const useStyles = makeStyles({
   },
 });
 
-function createData(day, s1, s2, s3, s4, s5, s6) {
-  return { day, s1, s2, s3, s4, s5, s6 };
-}
-
-const rows = [
-  createData(
-    "Monday",
-    [monthu.s1, monthu.s1_h2],
-    [monthu.s2, monthu.s2_h2],
-    [monthu.s3, monthu.s3_h2],
-    [monthu.s4, monthu.s4_h2],
-    [monthu.s5, monthu.s5_h2],
-    [monthu.s6, monthu.s6_h2]
-  ),
-  createData(
-    "Tuesday",
-    [tuefri.s1, tuefri.s1_h2],
-    [tuefri.s2, tuefri.s2_h2],
-    [tuefri.s3, tuefri.s3_h2],
-    [tuefri.s4, tuefri.s4_h2],
-    [tuefri.s5, tuefri.s5_h2],
-    [tuefri.s6, tuefri.s6_h2]
-  ),
-  createData(
-    "Wednesday",
-    [wedsat.s1, wedsat.s1_h2],
-    [wedsat.s2, wedsat.s2_h2],
-    [wedsat.s3, wedsat.s3_h2],
-    [wedsat.s4, wedsat.s4_h2],
-    [wedsat.s5, wedsat.s5_h2],
-    [wedsat.s6, wedsat.s6_h2]
-  ),
-  createData(
-    "Thursday",
-    [monthu.s1, monthu.s1_h2],
-    [monthu.s2, monthu.s2_h2],
-    [monthu.s3, monthu.s3_h2],
-    [monthu.s4, monthu.s4_h2],
-    [monthu.s5, monthu.s5_h2],
-    [monthu.s6, monthu.s6_h2]
-  ),
-  createData(
-    "Friday",
-    [tuefri.s1, tuefri.s1_h2],
-    [tuefri.s2, tuefri.s2_h2],
-    [tuefri.s3, tuefri.s3_h2],
-    [tuefri.s4, tuefri.s4_h2],
-    [tuefri.s5, tuefri.s5_h2],
-    [tuefri.s6, tuefri.s6_h2]
-  ),
-  createData(
-    "Saturday",
-    [wedsat.s1, wedsat.s1_h2],
-    [wedsat.s2, wedsat.s2_h2],
-    [wedsat.s3, wedsat.s3_h2],
-    [wedsat.s4, wedsat.s4_h2],
-    [wedsat.s5, wedsat.s5_h2],
-    [wedsat.s6, wedsat.s6_h2]
-  ),
-];
-
 export default function BasicTable() {
   const classes = useStyles();
 
-  const initialState = {
-    ict: true,
-  };
-
-  const reducer = (state, action) => ({ ...state, ...action });
-  const [state, setState] = useReducer(reducer, initialState);
-
-  const clearFilter = () => setState(initialState);
+  const [timetable, setTimetable] = useState(timetableData);
   const [sem, setSem] = useState(0);
 
   return (
@@ -116,7 +46,7 @@ export default function BasicTable() {
               <TableCell align="center">17:00 - 18:30</TableCell>
             </TableRow>
           </TableHead>
-          <TableBody>
+          {/* <TableBody>
             {rows.map((row) => (
               <TableRow key={row.day}>
                 <TableCell component="th" scope="row">
@@ -130,7 +60,7 @@ export default function BasicTable() {
                 <TableCell align="center">{row.s6[sem]}</TableCell>
               </TableRow>
             ))}
-          </TableBody>
+          </TableBody> */}
         </Table>
       </TableContainer>
       <div>
@@ -145,20 +75,16 @@ export default function BasicTable() {
           <option value={0}>H1</option>
           <option value={1}>H2</option>
         </select>
-        <div className="App">
-          <button onClick={() => clearFilter()}>Defaults</button>
-          <br />
-          <Checkbox
-            title="ICT"
-            fnIct={(v) =>
-              setState({
-                ict: v,
-              })
-            }
-            checked={state.ict}
-          />
-          <br />
-          ICT: {state.ict ? "true" : "false"}
+        <div>
+          {coursesData.map((item) => {
+            return (
+              <Checkbox
+                title={item.course}
+                timetable={timetable}
+                setTimetable={setTimetable}
+              />
+            );
+          })}
         </div>
       </div>
     </>
