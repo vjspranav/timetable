@@ -11,7 +11,8 @@ import {
   Chip,
 } from "@material-ui/core";
 
-import timetableData, { coursesData } from "./data";
+import timetableData from "./timetableData";
+import { coursesData } from "./coursesData";
 
 const Checkbox = (props) => {
   const course = props.courses.find((item) => item.id == props.id);
@@ -59,31 +60,6 @@ export default function BasicTable() {
 
   return (
     <>
-      <div>
-        Select sem:
-        <select
-          value={sem}
-          onChange={(event) => {
-            setSem(event.target.value);
-          }}
-        >
-          <option value={"all"}>All</option>
-          <option value={"h1"}>H1</option>
-          <option value={"h2"}>H2</option>
-        </select>
-        <div>
-          {courses.map((item) => {
-            return (
-              <Checkbox
-                key={item.id}
-                id={item.id}
-                courses={courses}
-                setCourses={setCourses}
-              />
-            );
-          })}
-        </div>
-      </div>
       <TableContainer component={Paper}>
         <Table className={classes.table} aria-label="simple table">
           <TableHead>
@@ -149,6 +125,31 @@ export default function BasicTable() {
           </TableBody>
         </Table>
       </TableContainer>
+      <div>
+        Select sem:
+        <select
+          value={sem}
+          onChange={(event) => {
+            setSem(event.target.value);
+          }}
+        >
+          <option value={"all"}>All</option>
+          <option value={"h1"}>H1</option>
+          <option value={"h2"}>H2</option>
+        </select>
+        <div>
+          {courses.map((item) => {
+            return (
+              <Checkbox
+                key={item.id}
+                id={item.id}
+                courses={courses}
+                setCourses={setCourses}
+              />
+            );
+          })}
+        </div>
+      </div>
     </>
   );
 }
