@@ -1,92 +1,90 @@
 export const coursesData = [
   {
     id: "1",
-    course: "Design and Analysis of Software Systems",
+    name: "Design and Analysis of Software Systems",
     type: "common",
     selected: true,
   },
   {
     id: "2",
-    course: "Software Programming for Performance",
+    name: "Software Programming for Performance",
     type: "h2",
     selected: true,
   },
   {
     id: "3",
-    course: "Machine, Data and Learning",
+    name: "Machine, Data and Learning",
     type: "common",
     selected: true,
   },
   {
     id: "4",
-    course: "Intro to Human Sciences",
+    name: "Intro to Human Sciences",
     type: "common",
     selected: true,
   },
   {
     id: "5",
-    course: "Intro to Game Theory",
+    name: "Intro to Game Theory",
     type: "common",
     selected: true,
   },
   {
     id: "6",
-    course: "Value Education 2",
+    name: "Value Education 2",
     type: "common",
     selected: true,
   },
 ];
 
 const data = {
-  monday: {
+  Monday: {
     period1: [
       {
-        course: "Design and Analysis of Software Systems",
+        id: "1",
+      },
+      {
+        id: "3",
       },
     ],
     period2: [
       {
-        course: "Software Programming for Performance",
-        type: "h2",
-        selected: true,
+        id: "2",
       },
     ],
     period3: [
       {
-        course: "Machine, Data and Learning",
-        type: "common",
-        selected: true,
+        id: "3",
       },
     ],
     period4: [],
     period5: [],
     period6: [],
   },
-  tuesday: {
+  Tuesday: {
     period1: [
       {
-        course: "Intro to Human Sciences",
-        type: "common",
-        selected: true,
+        id: "4",
       },
     ],
     period2: [
       {
-        course: "Intro to Game theory",
-        type: "common",
-        selected: true,
+        id: "5",
       },
     ],
     period3: [],
     period4: [],
     period5: [
       {
-        course: "Value Education 2",
-        type: "common",
-        selected: true,
+        id: "6",
       },
     ],
-    period6: [],
+    period6: [
+      {
+        id: "1",
+        tut: true,
+      },
+    ],
   },
 };
 
