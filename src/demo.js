@@ -14,7 +14,10 @@ import {
 import timetableData from "./timetableData";
 import { coursesData } from "./coursesData";
 
+var checkboxValues = JSON.parse(localStorage.getItem("checkboxValues")) || {};
+
 const Checkbox = (props) => {
+  if (checkboxValues) props.setCourses(checkboxValues);
   const course = props.courses.find((item) => item.id == props.id);
   if (course) {
     return (
@@ -31,6 +34,10 @@ const Checkbox = (props) => {
                 }
               });
               props.setCourses(updatedCourses);
+              localStorage.setItem(
+                "checkboxValues",
+                JSON.stringify(updatedCourses)
+              );
             }}
           />
           {course.name}
@@ -137,7 +144,7 @@ export default function BasicTable() {
           <option value={"h1"}>H1</option>
           <option value={"h2"}>H2</option>
         </select>
-        <div>
+        <div id="checkbox-container">
           {courses.map((item) => {
             return (
               <Checkbox
