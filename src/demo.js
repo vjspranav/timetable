@@ -16,10 +16,13 @@ import { coursesData } from "./coursesData";
 
 function clearAllPreferences() {
   localStorage.removeItem("checkboxValues");
+  localStorage.removeItem("semValue");
   window.location.reload(true);
 }
 
 var checkboxValues = JSON.parse(localStorage.getItem("checkboxValues"));
+var semValue = JSON.parse(localStorage.getItem("semValue"));
+
 console.log(checkboxValues);
 const Checkbox = (props) => {
   if (checkboxValues) {
@@ -58,9 +61,9 @@ const Checkbox = (props) => {
 };
 
 const useStyles = makeStyles({
-  // table: {
-  //   minWidth: 40,
-  // },
+  table: {
+    minWidth: 1200,
+  },
   chip: {
     margin: "5px 0",
   },
@@ -71,7 +74,7 @@ export default function BasicTable() {
 
   const [timetable, setTimetable] = useState(timetableData);
   const [courses, setCourses] = useState(coursesData);
-  const [sem, setSem] = useState("h1");
+  const [sem, setSem] = useState(semValue ? semValue : "h1");
 
   return (
     <>
@@ -141,11 +144,15 @@ export default function BasicTable() {
         </Table>
       </TableContainer>
       <div>
-        Select sem:
+        Select Term:
         <select
           value={sem}
           onChange={(event) => {
             setSem(event.target.value);
+            localStorage.setItem(
+              "semValue",
+              JSON.stringify(event.target.value)
+            );
           }}
         >
           <option value={"all"}>All</option>
@@ -167,6 +174,7 @@ export default function BasicTable() {
                 id={item.id}
                 courses={courses}
                 setCourses={setCourses}
+                setSem={setSem}
               />
             );
           })}
