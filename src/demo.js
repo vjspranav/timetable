@@ -14,6 +14,11 @@ import {
 import timetableData from "./timetableData";
 import { coursesData } from "./coursesData";
 
+function clearAllPreferences() {
+  localStorage.removeItem("checkboxValues");
+  window.location.reload(true);
+}
+
 var checkboxValues = JSON.parse(localStorage.getItem("checkboxValues"));
 console.log(checkboxValues);
 const Checkbox = (props) => {
@@ -146,7 +151,14 @@ export default function BasicTable() {
           <option value={"all"}>All</option>
           <option value={"h1"}>H1</option>
           <option value={"h2"}>H2</option>
-        </select>
+        </select>{" "}
+        <button
+          onClick={() => {
+            clearAllPreferences();
+          }}
+        >
+          Clear Preferences
+        </button>
         <div id="checkbox-container">
           {courses.map((item) => {
             return (
