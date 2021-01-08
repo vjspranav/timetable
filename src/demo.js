@@ -1,6 +1,6 @@
 import React, { useState, useReducer } from "react";
+import { withStyles, makeStyles } from "@material-ui/core/styles";
 import {
-  makeStyles,
   Table,
   TableBody,
   TableCell,
@@ -61,13 +61,18 @@ const Checkbox = (props) => {
 };
 
 const useStyles = makeStyles({
-  table: {
-    minWidth: 1200,
-  },
   chip: {
     margin: "5px 0",
   },
 });
+
+const StyledTableRow = withStyles((theme) => ({
+  root: {
+    "&:nth-of-type(odd)": {
+      backgroundColor: theme.palette.action.hover,
+    },
+  },
+}))(TableRow);
 
 export default function BasicTable() {
   const classes = useStyles();
@@ -93,7 +98,7 @@ export default function BasicTable() {
           </TableHead>
           <TableBody>
             {Object.keys(timetable).map((day) => (
-              <TableRow key={day}>
+              <StyledTableRow key={day}>
                 <TableCell component="th" scope="row">
                   {day}
                 </TableCell>
@@ -138,7 +143,7 @@ export default function BasicTable() {
                     </TableCell>
                   );
                 })}
-              </TableRow>
+              </StyledTableRow>
             ))}
           </TableBody>
         </Table>
