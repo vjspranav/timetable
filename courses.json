@@ -1,500 +1,626 @@
 [
 	        {
-	                id: "CS6.301",
-	                name: "Design and Analysis of Software Systems",
-	                type: "common",	               
-        	        selected: false 
+	                "id": "MA5.101",
+	                "name": "Discrete Structures",
+	                "type": "common",	               
+        	        "selected": false 
         	},
 	        {
-	                id: "CS7.301",
-	                name: "Machine, Data and Learning",
-	                type: "common",	               
-        	        selected: false 
+	                "id": "CS0.101",
+	                "name": "Computer Programming",
+	                "type": "common",	               
+        	        "selected": false 
         	},
 	        {
-	                id: "HS8.102",
-	                name: "Intro to Human Sciences",
-	                type: "common",	               
-        	        selected: false 
+	                "id": "EC2.101",
+	                "name": "Digital Systems and Microcontrollers",
+	                "type": "common",	               
+        	        "selected": false 
         	},
 	        {
-	                id: "SC1.111",
-	                name: "Science II",
-	                type: "common",	               
-        	        selected: false 
+	                "id": "MA4.101",
+	                "name": "Real Analysis",
+	                "type": "common",	               
+        	        "selected": false 
         	},
 	        {
-	                id: "CS1.302",
-	                name: "Automata Theory (H2)",
-	                type: "h2",	               
-        	        selected: false 
+	                "id": "OC2.101",
+	                "name": "Arts-1",
+	                "type": "common",	               
+        	        "selected": false 
         	},
 	        {
-	                id: "OC3.102",
-	                name: "Value Education II",
-	                type: "common",	               
-        	        selected: false 
+	                "id": "OC3.101",
+	                "name": "Value Education-1",
+	                "type": "common",	               
+        	        "selected": false 
         	},
 	        {
-	                id: "CS9.312",
-	                name: "Introduction to Quantum Information andComputation (H2)",
-	                type: "h2",	               
-        	        selected: false 
+	                "id": "OC1.101",
+	                "name": "Sports-1",
+	                "type": "common",	               
+        	        "selected": false 
         	},
 	        {
-	                id: "EC5.205",
-	                name: "Introduction to Coding Theory",
-	                type: "common",	               
-        	        selected: false 
+	                "id": "EC5.101",
+	                "name": "Networks Signals and Systems",
+	                "type": "common",	               
+        	        "selected": false 
         	},
 	        {
-	                id: "CS3.302",
-	                name: "Software Programming for Performance (H2)",
-	                type: "h2",	               
-        	        selected: false 
+	                "id": "EC2.102",
+	                "name": "Electronic Workshop-1 (H2)",
+	                "type": "h2",	               
+        	        "selected": false 
         	},
 	        {
-	                id: "CS7.303",
-	                name: "Digital Signal Analysis (H2)",
-	                type: "h2",	               
-        	        selected: false 
+	                "id": "SC4.101",
+	                "name": "Computing in Sciences-1(H)",
+	                "type": "common",	               
+        	        "selected": false 
         	},
 	        {
-	                id: "CS9.301",
-	                name: "Introduction to Brain and Cognition (H1)",
-	                type: "h1",	               
-        	        selected: false 
+	                "id": "CL1.101",
+	                "name": "Introduction to Linguistics-1",
+	                "type": "common",	               
+        	        "selected": false 
         	},
 	        {
-	                id: "CS7.302",
-	                name: "Computer Graphics (H2)",
-	                type: "h2",	               
-        	        selected: false 
+	                "id": "HS8.101",
+	                "name": "Making of Contemporary World",
+	                "type": "common",	               
+        	        "selected": false 
         	},
 	        {
-	                id: "EC5.203",
-	                name: "Communication Theory",
-	                type: "common",	               
-        	        selected: false 
+	                "id": "HS7.101",
+	                "name": "Human Sciences Lab-1 (H2)",
+	                "type": "h2",	               
+        	        "selected": false 
         	},
 	        {
-	                id: "EC6.202",
-	                name: "Intro to Processor Architecture (H1)",
-	                type: "h1",	               
-        	        selected: false 
+	                "id": "CS3.303",
+	                "name": "Introduction to IoT",
+	                "type": "common",	               
+        	        "selected": false 
         	},
 	        {
-	                id: "EC2.201",
-	                name: "VLSI Design",
-	                type: "common",	               
-        	        selected: false 
+	                "id": "CS1.301",
+	                "name": "Algorithm Analysis and Design",
+	                "type": "common",	               
+        	        "selected": false 
         	},
 	        {
-	                id: "EC2.203",
-	                name: "Intro to Bio Electronics (H2)",
-	                type: "h2",	               
-        	        selected: false 
+	                "id": "CS3.301",
+	                "name": "Operating Systems and Networks",
+	                "type": "common",	               
+        	        "selected": false 
         	},
 	        {
-	                id: "CS2.201",
-	                name: "Computer System Organization",
-	                type: "common",	               
-        	        selected: false 
+	                "id": "CS4.301",
+	                "name": "Data and Applications (H1)",
+	                "type": "h1",	               
+        	        "selected": false 
         	},
 	        {
-	                id: "SC1.204",
-	                name: "Thermodynamics (H1)",
-	                type: "h1",	               
-        	        selected: false 
+	                "id": "CS1.302",
+	                "name": "Automata Theory (H2)",
+	                "type": "h2",	               
+        	        "selected": false 
         	},
 	        {
-	                id: "SC1.205",
-	                name: "Statistical Mechanics (H2)",
-	                type: "h2",	               
-        	        selected: false 
+	                "id": "SC1.110",
+	                "name": "Science I",
+	                "type": "common",	               
+        	        "selected": false 
         	},
 	        {
-	                id: "SC2.203",
-	                name: "Biomolecular Structures (H1)",
-	                type: "h1",	               
-        	        selected: false 
+	                "id": "MA6.101",
+	                "name": "Probability and Statistics",
+	                "type": "common",	               
+        	        "selected": false 
         	},
 	        {
-	                id: "SC2.202",
-	                name: "Organic Chemistry (H2)",
-	                type: "h2",	               
-        	        selected: false 
+	                "id": "EC2.103",
+	                "name": "Analog Electronic Circuits",
+	                "type": "common",	               
+        	        "selected": false 
         	},
 	        {
-	                id: "CL1.204",
-	                name: "Language Typology and Universals",
-	                type: "common",	               
-        	        selected: false 
+	                "id": "EC2.201",
+	                "name": "VLSI Design",
+	                "type": "common",	               
+        	        "selected": false 
         	},
 	        {
-	                id: "CS7.401",
-	                name: "Introduction to NLP",
-	                type: "common",	               
-        	        selected: false 
+	                "id": "EC5.202",
+	                "name": "Systems Thinking",
+	                "type": "common",	               
+        	        "selected": false 
         	},
 	        {
-	                id: "HS0.302",
-	                name: "Research Methods in Human Sciences",
-	                type: "common",	               
-        	        selected: false 
+	                "id": "EC5.204",
+	                "name": "Communication and Controls in IoT (H1)",
+	                "type": "h1",	               
+        	        "selected": false 
         	},
 	        {
-	                id: "HS7.301",
-	                name: "Science, Technology and Society",
-	                type: "common",	               
-        	        selected: false 
+	                "id": "EC5.201",
+	                "name": "Signal Processing (not offering in M21)",
+	                "type": "common",	               
+        	        "selected": false 
         	},
 	        {
-	                id: "HS2.302",
-	                name: "Gender, Kinship, and State Law (H2)",
-	                type: "h2",	               
-        	        selected: false 
+	                "id": "SC2.101",
+	                "name": "General and Structural Chemistry",
+	                "type": "common",	               
+        	        "selected": false 
         	},
 	        {
-	                id: "CS3.305",
-	                name: "Computer Networks (H1)",
-	                type: "h1",	               
-        	        selected: false 
+	                "id": "SC1.203",
+	                "name": "Quantum Mechanics",
+	                "type": "common",	               
+        	        "selected": false 
         	},
 	        {
-	                id: "CSE494",
-	                name: "Honours Project IV",
-	                type: "common",	               
-        	        selected: false 
+	                "id": "SC3.101",
+	                "name": "Introduction to Biology",
+	                "type": "common",	               
+        	        "selected": false 
         	},
 	        {
-	                id: "ECE494",
-	                name: "ECE-Honours Project IV",
-	                type: "common",	               
-        	        selected: false 
+	                "id": "CL2.203",
+	                "name": "Language and Society",
+	                "type": "common",	               
+        	        "selected": false 
         	},
 	        {
-	                id: "SCI473",
-	                name: "CNS-Honours Project IV",
-	                type: "common",	               
-        	        selected: false 
+	                "id": "CL3.202",
+	                "name": "Computational Linguistics II: Comp Semantics and Discourse parsing",
+	                "type": "common",	               
+        	        "selected": false 
         	},
 	        {
-	                id: "SCI400",
-	                name: "CCNSB Seminar",
-	                type: "common",	               
-        	        selected: false 
+	                "id": "HS0.202",
+	                "name": "Thinking and Knowing in the Human Sciences - II",
+	                "type": "common",	               
+        	        "selected": false 
         	},
 	        {
-	                id: "CNO",
-	                name: "CName",
-	                type: "common",	               
-        	        selected: false 
+	                "id": "HS0.301",
+	                "name": "Classical Text Readings - I",
+	                "type": "common",	               
+        	        "selected": false 
         	},
 	        {
-	                id: "CSE538",
-	                name: "System and Network Security",
-	                type: "common",	               
-        	        selected: false 
+	                "id": "EC3.202",
+	                "name": "Embedded Systems Workshop",
+	                "type": "common",	               
+        	        "selected": false 
         	},
 	        {
-	                id: "CSE418",
-	                name: "Principles of Information Security",
-	                type: "common",	               
-        	        selected: false 
+	                "id": "SC2.304",
+	                "name": "Spectroscopy(H1)",
+	                "type": "h1",	               
+        	        "selected": false 
         	},
 	        {
-	                id: "CSE704",
-	                name: "PG-Project (8 Cr)",
-	                type: "common",	               
-        	        selected: false 
+	                "id": "SC2.305",
+	                "name": "Chemical Kinetics and Reaction Dynamics (H2)",
+	                "type": "h2",	               
+        	        "selected": false 
         	},
 	        {
-	                id: "CSE581",
-	                name: "Information Security Audit and Assurance",
-	                type: "common",	               
-        	        selected: false 
+	                "id": "SC3.202",
+	                "name": "Bioinformatics (H1)",
+	                "type": "h1",	               
+        	        "selected": false 
         	},
 	        {
-	                id: "CS0.302",
-	                name: "Computing Tools",
-	                type: "common",	               
-        	        selected: false 
+	                "id": "SC3.203",
+	                "name": "Systems Biology (H2)",
+	                "type": "h2",	               
+        	        "selected": false 
         	},
 	        {
-	                id: "SC3.303",
-	                name: "Advanced Bioinformatics",
-	                type: "common",	               
-        	        selected: false 
+	                "id": "SC9.302",
+	                "name": "CNS Honors - 1",
+	                "type": "common",	               
+        	        "selected": false 
         	},
 	        {
-	                id: "SCI860",
-	                name: "Computational Biology Project / Elective",
-	                type: "common",	               
-        	        selected: false 
+	                "id": "SC9.600",
+	                "name": "CCNSB Seminar-3",
+	                "type": "common",	               
+        	        "selected": false 
         	},
 	        {
-	                id: "SCI761",
-	                name: "Topics in Nanosciences",
-	                type: "common",	               
-        	        selected: false 
+	                "id": "CS7.501",
+	                "name": "Advanced NLP (100)",
+	                "type": "common",	               
+        	        "selected": false 
         	},
 	        {
-	                id: "SC1.315",
-	                name: "Nonlinear Dynamics",
-	                type: "common",	               
-        	        selected: false 
+	                "id": "CL9.302",
+	                "name": "CL-Honours-1",
+	                "type": "common",	               
+        	        "selected": false 
         	},
 	        {
-	                id: "SC1.320",
-	                name: "Introduction to Particle Physics",
-	                type: "common",	               
-        	        selected: false 
+	                "id": "HS0.303",
+	                "name": "Applied Ethics",
+	                "type": "common",	               
+        	        "selected": false 
         	},
 	        {
-	                id: "SCI477",
-	                name: "Machine Learning for Natural Sciences",
-	                type: "common",	               
-        	        selected: false 
+	                "id": "HS9.302",
+	                "name": "HS-Honours-1",
+	                "type": "common",	               
+        	        "selected": false 
         	},
 	        {
-	                id: "SC2.301",
-	                name: "Physics of Soft Condensed Matter",
-	                type: "common",	               
-        	        selected: false 
+	                "id": "CS9.401",
+	                "name": "BTP II / CSE-Honours Project III",
+	                "type": "common",	               
+        	        "selected": false 
         	},
 	        {
-	                id: "CLG452",
-	                name: "Linguistic Data 2: Collection & Modeling",
-	                type: "common",	               
-        	        selected: false 
+	                "id": "CS9.402",
+	                "name": "BTP II / CSE-Honours Project III",
+	                "type": "common",	               
+        	        "selected": false 
         	},
 	        {
-	                id: "CS4.501",
-	                name: "Social Computing",
-	                type: "common",	               
-        	        selected: false 
+	                "id": "HS0.203",
+	                "name": "Basics of Ethics (H1)",
+	                "type": "h1",	               
+        	        "selected": false 
         	},
 	        {
-	                id: "ECE442",
-	                name: "Time Frequency Analysis",
-	                type: "common",	               
-        	        selected: false 
+	                "id": "EC9.402",
+	                "name": "BTP II/ECE-Honours Project III",
+	                "type": "common",	               
+        	        "selected": false 
         	},
 	        {
-	                id: "ECE431",
-	                name: "Signal Detection and Estimation Theory",
-	                type: "common",	               
-        	        selected: false 
+	                "id": "EC9.401",
+	                "name": "BTP II/ECE-Honours Project III",
+	                "type": "common",	               
+        	        "selected": false 
         	},
 	        {
-	                id: "EC5.405",
-	                name: "Medical Image Analysis",
-	                type: "common",	               
-        	        selected: false 
+	                "id": "SC9.402",
+	                "name": "CNS-Honours Project III",
+	                "type": "common",	               
+        	        "selected": false 
         	},
 	        {
-	                id: "CSE578",
-	                name: "Computer Vision",
-	                type: "common",	               
-        	        selected: false 
+	                "id": "CL9.402",
+	                "name": "CL-Honours Project III",
+	                "type": "common",	               
+        	        "selected": false 
         	},
 	        {
-	                id: "CSE471",
-	                name: "Statistical Methods in AI",
-	                type: "common",	               
-        	        selected: false 
+	                "id": "CNO",
+	                "name": "CName",
+	                "type": "common",	               
+        	        "selected": false 
         	},
 	        {
-	                id: "EC2.405",
-	                name: "Applied Electromagnetics",
-	                type: "common",	               
-        	        selected: false 
+	                "id": "CS1.304",
+	                "name": "Data Structures & Algorithms for Problem Solving",
+	                "type": "common",	               
+        	        "selected": false 
         	},
 	        {
-	                id: "ECE537",
-	                name: "Topics in Coding Theory",
-	                type: "common",	               
-        	        selected: false 
+	                "id": "MA6.301",
+	                "name": "Maths for Computer Science 1- Probability and Statistics (H1)",
+	                "type": "h1",	               
+        	        "selected": false 
         	},
 	        {
-	                id: "EC2.404",
-	                name: "Design Verification and System Verilog",
-	                type: "common",	               
-        	        selected: false 
+	                "id": "MA6.302",
+	                "name": "Maths for Computer Science 2 - Linear Algebra (H2)",
+	                "type": "h2",	               
+        	        "selected": false 
         	},
 	        {
-	                id: "ECE463",
-	                name: "Digital VLSI Design",
-	                type: "common",	               
-        	        selected: false 
+	                "id": "CS6.302",
+	                "name": "Software Systems Development",
+	                "type": "common",	               
+        	        "selected": false 
         	},
 	        {
-	                id: "ECE562",
-	                name: "Flexible Electronics",
-	                type: "common",	               
-        	        selected: false 
+	                "id": "CS3.304",
+	                "name": "Advanced Operating Systems",
+	                "type": "common",	               
+        	        "selected": false 
         	},
 	        {
-	                id: "EC4.403",
-	                name: "Robotics: Planning and Navigation",
-	                type: "common",	               
-        	        selected: false 
+	                "id": "Credits",
+	                "name": "Faculty Name(s)",
+	                "type": "common",	               
+        	        "selected": false 
         	},
 	        {
-	                id: "EC4.402",
-	                name: "Intro to UAV Design",
-	                type: "common",	               
-        	        selected: false 
+	                "id": "3-1-0-4",
+	                "name": "Anil Kumar V + Chiranjeevi Yarra",
+	                "type": "common",	               
+        	        "selected": false 
         	},
 	        {
-	                id: "ECE551",
-	                name: "Advances in Robotics & Control",
-	                type: "common",	               
-        	        selected: false 
+	                "id": "CL5.401",
+	                "name": "Topics in SSMT",
+	                "type": "common",	               
+        	        "selected": false 
         	},
 	        {
-	                id: "CES442",
-	                name: "Disaster Management (40)",
-	                type: "common",	               
-        	        selected: false 
+	                "id": "CS7.404",
+	                "name": "Digital Image Processing",
+	                "type": "common",	               
+        	        "selected": false 
         	},
 	        {
-	                id: "CE1.603",
-	                name: "Advanced Structural Analysis",
-	                type: "common",	               
-        	        selected: false 
+	                "id": "EC5.408",
+	                "name": "Speech Signal Processing",
+	                "type": "common",	               
+        	        "selected": false 
         	},
 	        {
-	                id: "CEW612",
-	                name: "Design of Hydraulic Structures",
-	                type: "common",	               
-        	        selected: false 
+	                "id": "CS7.403",
+	                "name": "Statistical Methods in AI (200)",
+	                "type": "common",	               
+        	        "selected": false 
         	},
 	        {
-	                id: "CES617",
-	                name: "Stability of Structures",
-	                type: "common",	               
-        	        selected: false 
+	                "id": "EC5.407",
+	                "name": "Wireless Communications",
+	                "type": "common",	               
+        	        "selected": false 
         	},
 	        {
-	                id: "CES641",
-	                name: "Earthquake Engineering",
-	                type: "common",	               
-        	        selected: false 
+	                "id": "EC5.409",
+	                "name": "Radar Systems",
+	                "type": "common",	               
+        	        "selected": false 
         	},
 	        {
-	                id: "CEG461",
-	                name: "Remote Sensing (40)",
-	                type: "common",	               
-        	        selected: false 
+	                "id": "EC5.406",
+	                "name": "Signal Detection and Estimation Theory",
+	                "type": "common",	               
+        	        "selected": false 
         	},
 	        {
-	                id: "CEG422",
-	                name: "Green Buildings (40)",
-	                type: "common",	               
-        	        selected: false 
+	                "id": "EC2.401",
+	                "name": "Analog IC Design",
+	                "type": "common",	               
+        	        "selected": false 
         	},
 	        {
-	                id: "CES771",
-	                name: "CASE Project",
-	                type: "common",	               
-        	        selected: false 
+	                "id": "EC2.407",
+	                "name": "Design for Testability",
+	                "type": "common",	               
+        	        "selected": false 
         	},
 	        {
-	                id: "CSE481",
-	                name: "Optimization Methods",
-	                type: "common",	               
-        	        selected: false 
+	                "id": "CS2.401",
+	                "name": "FPGA based Accelerator Design",
+	                "type": "common",	               
+        	        "selected": false 
         	},
 	        {
-	                id: "CS1.406",
-	                name: "Adv. Algorithms",
-	                type: "common",	               
-        	        selected: false 
+	                "id": "EC2.406",
+	                "name": "CMOS Radio Frequency Integrated Circuit Design",
+	                "type": "common",	               
+        	        "selected": false 
         	},
 	        {
-	                id: "CS4.401",
-	                name: "Data Systems",
-	                type: "common",	               
-        	        selected: false 
+	                "id": "CS7.503",
+	                "name": "Mobile Robotics",
+	                "type": "common",	               
+        	        "selected": false 
         	},
 	        {
-	                id: "CSE461",
-	                name: "Software Engineering",
-	                type: "common",	               
-        	        selected: false 
+	                "id": "EC4.401",
+	                "name": "Robotics: Dynamics and Control",
+	                "type": "common",	               
+        	        "selected": false 
         	},
 	        {
-	                id: "CSE431",
-	                name: "Distributed Systems (Max:100) Prerequisite:Operating Systems. Networks desirable",
-	                type: "common",	               
-        	        selected: false 
+	                "id": "CS7.502",
+	                "name": "Topics in Machine Learning Prerequisite: Statistical Methods in AI",
+	                "type": "common",	               
+        	        "selected": false 
         	},
 	        {
-	                id: "CSE595",
-	                name: "ICTs for Development (Free Elective)",
-	                type: "common",	               
-        	        selected: false 
+	                "id": "CE4.601",
+	                "name": "Applied Regression Analysis",
+	                "type": "common",	               
+        	        "selected": false 
         	},
 	        {
-	                id: "CSE498",
-	                name: "Introduction to Game Theory",
-	                type: "common",	               
-        	        selected: false 
+	                "id": "CS4.408",
+	                "name": "Spatial Informatics (50)",
+	                "type": "common",	               
+        	        "selected": false 
         	},
 	        {
-	                id: "CSE563",
-	                name: "Internals of Application Servers",
-	                type: "common",	               
-        	        selected: false 
+	                "id": "CE0.501",
+	                "name": "Theory of Elasticity and Plasticity",
+	                "type": "common",	               
+        	        "selected": false 
         	},
 	        {
-	                id: "CSE586",
-	                name: "Cognitive Neuroscience",
-	                type: "common",	               
-        	        selected: false 
+	                "id": "CE1.607",
+	                "name": "Earthquake Resistant Design of Masonry Structures",
+	                "type": "common",	               
+        	        "selected": false 
         	},
 	        {
-	                id: "CSE588",
-	                name: "Music, Mind, and Technology (Max:30)",
-	                type: "common",	               
-        	        selected: false 
+	                "id": "CE1.604",
+	                "name": "Advanced Structural Design",
+	                "type": "common",	               
+        	        "selected": false 
         	},
 	        {
-	                id: "CSE567",
-	                name: "Usability Engineering",
-	                type: "common",	               
-        	        selected: false 
+	                "id": "CS9.428",
+	                "name": "Environmental Science & Technology (Open Elective)",
+	                "type": "common",	               
+        	        "selected": false 
         	},
 	        {
-	                id: "CS7.601",
-	                name: "Deep Learning: Theory and Practices(Max:80)",
-	                type: "common",	               
-        	        selected: false 
+	                "id": "CE1.605",
+	                "name": "IS Codes on Design and Structural Safety Assessment",
+	                "type": "common",	               
+        	        "selected": false 
         	},
 	        {
-	                id: "CS4.403",
-	                name: "Distributed Data Systems (Max:30)",
-	                type: "common",	               
-        	        selected: false 
+	                "id": "CE1.509",
+	                "name": "Structural Wind Engineering",
+	                "type": "common",	               
+        	        "selected": false 
         	},
 	        {
-	                id: "CS1.501",
-	                name: "Advanced Optimization: Theory andApplications",
-	                type: "common",	               
-        	        selected: false 
+	                "id": "CS1.405",
+	                "name": "Modern Complexity Theory (100)",
+	                "type": "common",	               
+        	        "selected": false 
         	},
 	        {
-	                id: "CS9.422",
-	                name: "Behavioral Research: Statistical Methods(H2)",
-	                type: "h2",	               
-        	        selected: false 
+	                "id": "CS1.402",
+	                "name": "Principles of Programming Languages (100)",
+	                "type": "common",	               
+        	        "selected": false 
         	},
 	        {
-	                id: "CEG462",
-	                name: "Hydro Informatics (40)",
-	                type: "common",	               
-        	        selected: false 
+	                "id": "CS3.401",
+	                "name": "Distributed Systems (150)",
+	                "type": "common",	               
+        	        "selected": false 
+        	},
+	        {
+	                "id": "CS4.401",
+	                "name": "Data Systems (150)",
+	                "type": "common",	               
+        	        "selected": false 
+        	},
+	        {
+	                "id": "CS3.402",
+	                "name": "Advanced Computer Networks (150)",
+	                "type": "common",	               
+        	        "selected": false 
+        	},
+	        {
+	                "id": "CS4.406",
+	                "name": "Information Retrieval & Extraction (100)",
+	                "type": "common",	               
+        	        "selected": false 
+        	},
+	        {
+	                "id": "CS4.405",
+	                "name": "Data Analytics I (100)",
+	                "type": "common",	               
+        	        "selected": false 
+        	},
+	        {
+	                "id": "CS9.426",
+	                "name": "Intro to Cognitive Science (50)",
+	                "type": "common",	               
+        	        "selected": false 
+        	},
+	        {
+	                "id": "CS3.502",
+	                "name": "Real-Time Systems (50)",
+	                "type": "common",	               
+        	        "selected": false 
+        	},
+	        {
+	                "id": "CS8.501",
+	                "name": "Research in Information Security",
+	                "type": "common",	               
+        	        "selected": false 
+        	},
+	        {
+	                "id": "CS4.404",
+	                "name": "Advanced Data Systems",
+	                "type": "common",	               
+        	        "selected": false 
+        	},
+	        {
+	                "id": "CS9.425",
+	                "name": "Social Science Perspective on HCI (Open Elective) (Max:60 Students)",
+	                "type": "common",	               
+        	        "selected": false 
+        	},
+	        {
+	                "id": "CS3.403",
+	                "name": "Distributing Trust and Block Chains (Max: 40 Students)",
+	                "type": "common",	               
+        	        "selected": false 
+        	},
+	        {
+	                "id": "CS9.427",
+	                "name": "Introduction to Neural and Cognitive Modeling",
+	                "type": "common",	               
+        	        "selected": false 
+        	},
+	        {
+	                "id": "CS9.421",
+	                "name": "Behavioral Research & Experimental Design (30)",
+	                "type": "common",	               
+        	        "selected": false 
+        	},
+	        {
+	                "id": "CS9.424",
+	                "name": "Technology Product Entrepreneurship (50)",
+	                "type": "common",	               
+        	        "selected": false 
+        	},
+	        {
+	                "id": "CE5.502",
+	                "name": "Hydrological modelling and Software Development (40) (Open Elective)",
+	                "type": "common",	               
+        	        "selected": false 
+        	},
+	        {
+	                "id": "CS9.313",
+	                "name": "Eco-Informatics (Open Elective)",
+	                "type": "common",	               
+        	        "selected": false 
+        	},
+	        {
+	                "id": "CS6.501",
+	                "name": "Topics in Software Engineering",
+	                "type": "common",	               
+        	        "selected": false 
+        	},
+	        {
+	                "id": "CS9.423",
+	                "name": "Introduction to Neuroeconomics (26)",
+	                "type": "common",	               
+        	        "selected": false 
+        	},
+	        {
+	                "id": "CS4.407",
+	                "name": "Online Privacy",
+	                "type": "common",	               
+        	        "selected": false 
+        	},
+	        {
+	                "id": "CS7.504",
+	                "name": "Fairness, Privacy and Ethics in AI",
+	                "type": "common",	               
+        	        "selected": false 
+        	},
+	        {
+	                "id": "CS3.306",
+	                "name": "Algorithms and Operating Systems (Open Elective for UG ECE/D students only)",
+	                "type": "common",	               
+        	        "selected": false 
+        	},
+	        {
+	                "id": "CS9.429",
+	                "name": "Design for Social Innovation",
+	                "type": "common",	               
+        	        "selected": false 
         	}
 ]

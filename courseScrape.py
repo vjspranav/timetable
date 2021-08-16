@@ -10,7 +10,7 @@ import tabula
 import pandas as pd
 
 #declare the path of your file
-file_path = "C:/Users/vjspranav/Downloads/Documents/CourseOfferings-S21-V3.pdf"
+file_path = "./pdf/Course_Offerings_M21-Ver4.pdf"
 #Convert your file
 df = tabula.read_pdf(file_path, multiple_tables=False, pages='all')
 df = df[0]
@@ -32,10 +32,10 @@ jsd = []
 for key in courses.keys():
     str1='''
 	        {
-	                id: "%s",
-	                name: "%s",
-	                type: "%s",	               
-        	        selected: false 
+	                "id": "%s",
+	                "name": "%s",
+	                "type": "%s",	               
+        	        "selected": false 
         	}''' % (key, courses[key], ha[key])
     jsd.append(str1)
 
