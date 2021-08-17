@@ -1,5 +1,6 @@
 import React, { useState, useReducer } from "react";
 import { withStyles, makeStyles } from "@material-ui/core/styles";
+import TextField from "@material-ui/core/TextField";
 import {
   Table,
   TableBody,
@@ -27,7 +28,6 @@ console.log(checkboxValues);
 const Checkbox = (props) => {
   if (checkboxValues) {
     props.setCourses(checkboxValues);
-    console.log("Reached here");
   }
   const course = props.courses.find((item) => item.id == props.id);
   if (course) {
@@ -80,7 +80,7 @@ export default function BasicTable() {
   const [timetable, setTimetable] = useState(timetableData);
   const [courses, setCourses] = useState(coursesData);
   const [sem, setSem] = useState(semValue ? semValue : "h1");
-
+  const [searchCourses, setSearchCourses] = useState("");
   return (
     <>
       <TableContainer component={Paper}>
@@ -172,17 +172,44 @@ export default function BasicTable() {
         >
           Clear Preferences
         </button>
+        <h5>Selected Courses</h5>
+        <div style={{ display: "flex" }}>
+          {courses
+            .filter((item) => item.selected)
+            .map((course) => {
+              return (
+                <Chip
+                  label={course.name}
+                  className={classes.chip}
+                  color="inherit"
+                />
+              );
+            })}
+        </div>
+        <TextField
+          style={{ display: "block" }}
+          id="standard-search"
+          label="Search Courses"
+          type="search"
+          onChange={(e) => {
+            setSearchCourses(e.target.value);
+          }}
+        />
         <div id="checkbox-container">
           {courses.map((item) => {
-            return (
-              <Checkbox
-                key={item.id}
-                id={item.id}
-                courses={courses}
-                setCourses={setCourses}
-                setSem={setSem}
-              />
-            );
+            if (
+              item.name.toLowerCase().indexOf(searchCourses.toLowerCase()) !==
+              -1
+            )
+              return (
+                <Checkbox
+                  key={item.id}
+                  id={item.id}
+                  courses={courses}
+                  setCourses={setCourses}
+                  setSem={setSem}
+                />
+              );
           })}
         </div>
       </div>
