@@ -1,6 +1,6 @@
 import React, { useState, useReducer } from "react";
 import { withStyles, makeStyles } from "@material-ui/core/styles";
-import TextField from "@material-ui/core/TextField";
+import SearchIcon from "@material-ui/icons/Search";
 import {
   Table,
   TableBody,
@@ -10,6 +10,8 @@ import {
   TableRow,
   Paper,
   Chip,
+  TextField,
+  InputAdornment,
 } from "@material-ui/core";
 
 import timetableData from "./timetableData";
@@ -24,7 +26,6 @@ function clearAllPreferences() {
 var checkboxValues = JSON.parse(localStorage.getItem("checkboxValues"));
 var semValue = JSON.parse(localStorage.getItem("semValue"));
 
-console.log(checkboxValues);
 const Checkbox = (props) => {
   if (checkboxValues) {
     props.setCourses(checkboxValues);
@@ -172,7 +173,15 @@ export default function BasicTable() {
         >
           Clear Preferences
         </button>
-        <h5>Selected Courses</h5>
+        <hr />
+        <div
+          style={{
+            marginTop: "15px",
+            marginBottom: "5px",
+          }}
+        >
+          <strong>Selected Courses</strong>
+        </div>
         <div style={{ display: "flex" }}>
           {courses
             .filter((item) => item.selected)
@@ -186,16 +195,35 @@ export default function BasicTable() {
               );
             })}
         </div>
+        <hr />
         <TextField
-          style={{ display: "block" }}
-          id="standard-search"
+          style={{ display: "block", marginBottom: "5px" }}
+          id="outlined-search"
+          // variant="outlined"
           label="Search Courses"
+          InputProps={{
+            startAdornment: (
+              <InputAdornment position="start">
+                <SearchIcon />
+              </InputAdornment>
+            ),
+          }}
           type="search"
           onChange={(e) => {
             setSearchCourses(e.target.value);
           }}
         />
-        <div id="checkbox-container">
+        <div
+          id="checkbox-container"
+          style={{
+            float: "left",
+            width: "100%",
+            overflowY: "auto",
+            height: "200px",
+            border: "1px solid black",
+            marginBottom: "2px",
+          }}
+        >
           {courses.map((item) => {
             if (
               item.name.toLowerCase().indexOf(searchCourses.toLowerCase()) !==
