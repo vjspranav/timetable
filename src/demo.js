@@ -94,6 +94,7 @@ export default function BasicTable() {
               <TableCell align="center">14:00 - 15:30</TableCell>
               <TableCell align="center">15:30 - 17:00</TableCell>
               <TableCell align="center">17:00 - 18:30</TableCell>
+              <TableCell align="center">18:30 - 19:00</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>

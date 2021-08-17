@@ -36,7 +36,7 @@ for key in courses.keys():
 	                "name": "%s",
 	                "type": "%s",	               
         	        "selected": false 
-        	}''' % (key, courses[key], ha[key])
+        	}''' % (key, courses[key].replace('\n', ' ').replace('\r', ' '), ha[key].replace('\n', ' ').replace('\r', ' '))
     jsd.append(str1)
 
 with open('courses.json', 'w') as outfile:
