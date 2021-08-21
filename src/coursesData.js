@@ -576,6 +576,12 @@ export const coursesData = [
     selected: false,
   },
   {
+    id: "HS3.201",
+    name: "Introduction to History",
+    type: "common",
+    selected: false,
+  },
+  {
     id: "CS9.421",
     name: "Behavioral Research & Experimental Design (30)",
     type: "common",

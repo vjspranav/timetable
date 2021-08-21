@@ -182,7 +182,7 @@ export default function BasicTable() {
         >
           <strong>Selected Courses</strong>
         </div>
-        <div style={{ display: "flex" }}>
+        <div style={{}}>
           {courses
             .filter((item) => item.selected)
             .map((course) => {

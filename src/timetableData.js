@@ -170,6 +170,9 @@ const timetableData = {
     ],
     period2: [
       {
+        id: "HS3.201",
+      },
+      {
         id: "CS8.501",
       },
       {
@@ -514,6 +517,9 @@ const timetableData = {
       },
     ],
     period2: [
+      {
+        id: "HS3.201",
+      },
       {
         id: "CS8.501",
       },
