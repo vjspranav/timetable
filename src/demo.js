@@ -16,6 +16,15 @@ import {
 
 import timetableData from "./timetableData";
 import { coursesData } from "./coursesData";
+import Box from "@mui/material/Box";
+import InputLabel from "@mui/material/InputLabel";
+import MenuItem from "@mui/material/MenuItem";
+import FormControl from "@mui/material/FormControl";
+import Select from "@mui/material/Select";
+import Button from "@mui/material/Button";
+import FormGroup from "@mui/material/FormGroup";
+import FormControlLabel from "@mui/material/FormControlLabel";
+import Checkbox from "@mui/material/Checkbox";
 
 function clearAllPreferences() {
   localStorage.removeItem("checkboxValues");
@@ -25,16 +34,17 @@ function clearAllPreferences() {
 
 var checkboxValues = JSON.parse(localStorage.getItem("checkboxValues"));
 var semValue = JSON.parse(localStorage.getItem("semValue"));
+console.log("🚀 ~ file: demo.js ~ line 33 ~ semValue", semValue);
 
-const Checkbox = (props) => {
+const CustomCheckbox = (props) => {
   if (checkboxValues) {
     props.setCourses(checkboxValues);
   }
   const course = props.courses.find((item) => item.id == props.id);
   if (course) {
     return (
-      <div>
-        <label>
+      <Box>
+        {/* <label>
           <input
             type="checkbox"
             checked={course.selected}
@@ -53,8 +63,28 @@ const Checkbox = (props) => {
             }}
           />
           {course.name}
-        </label>
-      </div>
+        </label> */}
+        <FormGroup>
+          <FormControlLabel
+            control={<Checkbox 
+              checked={course.selected}
+              onChange={(event) => {
+                const updatedCourses = [...props.courses];
+                updatedCourses.forEach((obj) => {
+                  if (obj.id == props.id) {
+                    obj.selected = event.target.checked;
+                  }
+                });
+                props.setCourses(updatedCourses);
+                localStorage.setItem(
+                  "checkboxValues",
+                  JSON.stringify(updatedCourses)
+                );
+              }}/>}
+            label={course.name}
+          />
+        </FormGroup>
+      </Box>
     );
   } else {
     return null;
@@ -151,8 +181,7 @@ export default function BasicTable() {
         </Table>
       </TableContainer>
       <div>
-        Select Term:
-        <select
+        {/* <select
           value={sem}
           onChange={(event) => {
             setSem(event.target.value);
@@ -165,14 +194,37 @@ export default function BasicTable() {
           <option value={"all"}>All</option>
           <option value={"h1"}>H1</option>
           <option value={"h2"}>H2</option>
-        </select>{" "}
-        <button
+        </select>{" "} */}
+        <Box>
+          <FormControl variant="filled" sx={{ my: 2, minWidth: 200 }}>
+            <InputLabel id="demo-simple-select-label">Select Term:</InputLabel>
+            <Select
+              labelId="demo-simple-select-label"
+              id="demo-simple-select"
+              value={sem}
+              onChange={(event) => {
+                setSem(event.target.value);
+                localStorage.setItem(
+                  "semValue",
+                  JSON.stringify(event.target.value)
+                );
+              }}
+            >
+              <MenuItem value={"all"}>All</MenuItem>
+              <MenuItem value={"h1"}>H1</MenuItem>
+              <MenuItem value={"h2"}>H2</MenuItem>
+            </Select>
+          </FormControl>
+        </Box>
+        <Button
+          variant="contained"
+          color="primary"
           onClick={() => {
             clearAllPreferences();
           }}
         >
           Clear Preferences
-        </button>
+        </Button>
         <hr />
         <div
           style={{
@@ -182,7 +234,7 @@ export default function BasicTable() {
         >
           <strong>Selected Courses</strong>
         </div>
-        <div style={{}}>
+        <div>
           {courses
             .filter((item) => item.selected)
             .map((course) => {
@@ -197,14 +249,16 @@ export default function BasicTable() {
         </div>
         <hr />
         <TextField
-          style={{ display: "block", marginBottom: "5px" }}
+          style={{ marginBottom: "5px" }}
+          fullWidth
+          margin="dense"
           id="outlined-search"
-          // variant="outlined"
+          variant="outlined"
           label="Search Courses"
           InputProps={{
             startAdornment: (
               <InputAdornment position="start">
-                <SearchIcon />
+                <SearchIcon variant="filled" />
               </InputAdornment>
             ),
           }}
@@ -213,7 +267,7 @@ export default function BasicTable() {
             setSearchCourses(e.target.value);
           }}
         />
-        <div
+        <Box
           id="checkbox-container"
           style={{
             float: "left",
@@ -230,7 +284,7 @@ export default function BasicTable() {
               -1
             )
               return (
-                <Checkbox
+                <CustomCheckbox
                   key={item.id}
                   id={item.id}
                   courses={courses}
@@ -239,7 +293,7 @@ export default function BasicTable() {
                 />
               );
           })}
-        </div>
+        </Box>
       </div>
     </>
   );
