@@ -269,6 +269,7 @@ export default function BasicTable() {
         />
         <Box
           id="checkbox-container"
+          pl={2}
           style={{
             float: "left",
             width: "100%",
