@@ -1,6 +1,7 @@
 import React, { useState, useReducer } from "react";
+import { withStyles, makeStyles } from "@material-ui/core/styles";
+import SearchIcon from "@material-ui/icons/Search";
 import {
-  makeStyles,
   Table,
   TableBody,
   TableCell,
@@ -9,11 +10,26 @@ import {
   TableRow,
   Paper,
   Chip,
+  TextField,
+  InputAdornment,
 } from "@material-ui/core";
 
-import timetableData, { coursesData } from "./data";
+import timetableData from "./timetableData";
+import { coursesData } from "./coursesData";
+
+function clearAllPreferences() {
+  localStorage.removeItem("checkboxValues");
+  localStorage.removeItem("semValue");
+  window.location.reload(true);
+}
+
+var checkboxValues = JSON.parse(localStorage.getItem("checkboxValues"));
+var semValue = JSON.parse(localStorage.getItem("semValue"));
 
 const Checkbox = (props) => {
+  if (checkboxValues) {
+    props.setCourses(checkboxValues);
+  }
   const course = props.courses.find((item) => item.id == props.id);
   if (course) {
     return (
@@ -30,6 +46,10 @@ const Checkbox = (props) => {
                 }
               });
               props.setCourses(updatedCourses);
+              localStorage.setItem(
+                "checkboxValues",
+                JSON.stringify(updatedCourses)
+              );
             }}
           />
           {course.name}
@@ -42,48 +62,28 @@ const Checkbox = (props) => {
 };
 
 const useStyles = makeStyles({
-  // table: {
-  //   minWidth: 40,
-  // },
   chip: {
     margin: "5px 0",
   },
 });
+
+const StyledTableRow = withStyles((theme) => ({
+  root: {
+    "&:nth-of-type(odd)": {
+      backgroundColor: theme.palette.action.hover,
+    },
+  },
+}))(TableRow);
 
 export default function BasicTable() {
   const classes = useStyles();
 
   const [timetable, setTimetable] = useState(timetableData);
   const [courses, setCourses] = useState(coursesData);
-  const [sem, setSem] = useState("h1");
-
+  const [sem, setSem] = useState(semValue ? semValue : "h1");
+  const [searchCourses, setSearchCourses] = useState("");
   return (
     <>
-      <div>
-        Select sem:
-        <select
-          value={sem}
-          onChange={(event) => {
-            setSem(event.target.value);
-          }}
-        >
-          <option value={"all"}>All</option>
-          <option value={"h1"}>H1</option>
-          <option value={"h2"}>H2</option>
-        </select>
-        <div>
-          {courses.map((item) => {
-            return (
-              <Checkbox
-                key={item.id}
-                id={item.id}
-                courses={courses}
-                setCourses={setCourses}
-              />
-            );
-          })}
-        </div>
-      </div>
       <TableContainer component={Paper}>
         <Table className={classes.table} aria-label="simple table">
           <TableHead>
@@ -95,11 +95,12 @@ export default function BasicTable() {
               <TableCell align="center">14:00 - 15:30</TableCell>
               <TableCell align="center">15:30 - 17:00</TableCell>
               <TableCell align="center">17:00 - 18:30</TableCell>
+              <TableCell align="center">18:30 - 19:00</TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
             {Object.keys(timetable).map((day) => (
-              <TableRow key={day}>
+              <StyledTableRow key={day}>
                 <TableCell component="th" scope="row">
                   {day}
                 </TableCell>
@@ -127,7 +128,7 @@ export default function BasicTable() {
                           } else {
                             tmp = curCourse.name;
                           }
-                          if (item.tut) {
+                          if (item.tut && tmp) {
                             tmp = `${tmp} - Tutorial`;
                           }
                         }
@@ -144,11 +145,102 @@ export default function BasicTable() {
                     </TableCell>
                   );
                 })}
-              </TableRow>
+              </StyledTableRow>
             ))}
           </TableBody>
         </Table>
       </TableContainer>
+      <div>
+        Select Term:
+        <select
+          value={sem}
+          onChange={(event) => {
+            setSem(event.target.value);
+            localStorage.setItem(
+              "semValue",
+              JSON.stringify(event.target.value)
+            );
+          }}
+        >
+          <option value={"all"}>All</option>
+          <option value={"h1"}>H1</option>
+          <option value={"h2"}>H2</option>
+        </select>{" "}
+        <button
+          onClick={() => {
+            clearAllPreferences();
+          }}
+        >
+          Clear Preferences
+        </button>
+        <hr />
+        <div
+          style={{
+            marginTop: "15px",
+            marginBottom: "5px",
+          }}
+        >
+          <strong>Selected Courses</strong>
+        </div>
+        <div style={{}}>
+          {courses
+            .filter((item) => item.selected)
+            .map((course) => {
+              return (
+                <Chip
+                  label={course.name}
+                  className={classes.chip}
+                  color="inherit"
+                />
+              );
+            })}
+        </div>
+        <hr />
+        <TextField
+          style={{ display: "block", marginBottom: "5px" }}
+          id="outlined-search"
+          // variant="outlined"
+          label="Search Courses"
+          InputProps={{
+            startAdornment: (
+              <InputAdornment position="start">
+                <SearchIcon />
+              </InputAdornment>
+            ),
+          }}
+          type="search"
+          onChange={(e) => {
+            setSearchCourses(e.target.value);
+          }}
+        />
+        <div
+          id="checkbox-container"
+          style={{
+            float: "left",
+            width: "100%",
+            overflowY: "auto",
+            height: "200px",
+            border: "1px solid black",
+            marginBottom: "2px",
+          }}
+        >
+          {courses.map((item) => {
+            if (
+              item.name.toLowerCase().indexOf(searchCourses.toLowerCase()) !==
+              -1
+            )
+              return (
+                <Checkbox
+                  key={item.id}
+                  id={item.id}
+                  courses={courses}
+                  setCourses={setCourses}
+                  setSem={setSem}
+                />
+              );
+          })}
+        </div>
+      </div>
     </>
   );
 }
