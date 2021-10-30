@@ -273,7 +273,7 @@ export default function BasicTable() {
             float: "left",
             width: "100%",
             overflowY: "auto",
-            height: "200px",
+            height: "150px",
             border: "1px solid black",
             marginBottom: "2px",
           }}
