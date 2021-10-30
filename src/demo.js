@@ -272,7 +272,7 @@ export default function BasicTable() {
           pl={2}
           style={{
             float: "left",
-            width: "100%",
+            width: "99%",
             overflowY: "auto",
             height: "150px",
             border: "1px solid black",
