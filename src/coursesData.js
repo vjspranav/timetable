@@ -117,7 +117,7 @@ export const coursesData = [
     id: "SC1.421",
     name: "Introduction to Quantum Field Theory",
     type: "common",
-    selected: true,
+    selected: false,
   },
   {
     id: "MA6.101",
@@ -549,7 +549,7 @@ export const coursesData = [
     id: "CS8.501",
     name: "Research in Information Security",
     type: "common",
-    selected: false,
+    selected: true,
   },
   {
     id: "CS4.404",

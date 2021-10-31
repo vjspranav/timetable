@@ -242,6 +242,7 @@ export default function BasicTable() {
                 <Chip
                   label={course.name}
                   className={classes.chip}
+                  style={{ margin: "5px" }}
                   color="inherit"
                 />
               );
