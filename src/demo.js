@@ -190,6 +190,7 @@ export default function BasicTable() {
                 <Chip
                   label={course.name}
                   className={classes.chip}
+                  style={{ margin: "5px" }}
                   color="inherit"
                 />
               );
@@ -199,7 +200,6 @@ export default function BasicTable() {
         <TextField
           style={{ display: "block", marginBottom: "5px" }}
           id="outlined-search"
-          // variant="outlined"
           label="Search Courses"
           InputProps={{
             startAdornment: (
