@@ -1,5 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Demo from "./demo";
+import Timetable from "./timetable";
 
-ReactDOM.render(<Demo />, document.querySelector("#root"));
+ReactDOM.render(<Timetable />, document.querySelector("#root"));
