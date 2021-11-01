@@ -1,4 +1,4 @@
-import React, { useState, useReducer } from "react";
+import React, { useState, useEffect } from "react";
 import { withStyles, makeStyles } from "@material-ui/core/styles";
 import SearchIcon from "@material-ui/icons/Search";
 import {
@@ -12,20 +12,19 @@ import {
   Chip,
   TextField,
   InputAdornment,
+  AppBar,
+  Toolbar,
+  IconButton,
+  Typography,
 } from "@material-ui/core";
-import { AppBar, Toolbar, IconButton } from "@material-ui/core";
-import { Typography } from "@material-ui/core";
-import BrightnessLowIcon from "@mui/icons-material/BrightnessLow";
+import Modal from "@mui/material/Modal";
 import MenuIcon from "@material-ui/icons/Menu";
 import Menu from "@mui/material/Menu";
 
 import timetableData from "./timetableData";
 import { coursesData } from "./coursesData";
 import Box from "@mui/material/Box";
-import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
-import FormControl from "@mui/material/FormControl";
-import Select from "@mui/material/Select";
 import Button from "@mui/material/Button";
 import FormGroup from "@mui/material/FormGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
@@ -39,12 +38,11 @@ function clearAllPreferences() {
 
 var checkboxValues = JSON.parse(localStorage.getItem("checkboxValues"));
 var semValue = JSON.parse(localStorage.getItem("semValue"));
-console.log("🚀 ~ file: demo.js ~ line 33 ~ semValue", semValue);
 
 // Create a Responsive App Bar Component using Material UI
 // Position at the top of screen
 // With hamburger icon at left
-const Topbar = ({ sem, setSem }) => {
+const Topbar = ({ sem, setSem, handleOpen }) => {
   const [anchorEl, setAnchorEl] = React.useState(null);
 
   const handleMenu = (event) => {
@@ -61,6 +59,7 @@ const Topbar = ({ sem, setSem }) => {
             color="inherit"
             aria-label="menu"
             sx={{ mr: 2 }}
+            onClick={handleOpen}
           >
             <MenuIcon />
           </IconButton>
@@ -136,9 +135,12 @@ const Topbar = ({ sem, setSem }) => {
 };
 
 const CustomCheckbox = (props) => {
-  if (checkboxValues) {
-    props.setCourses(checkboxValues);
-  }
+  useEffect(() => {
+    if (checkboxValues) {
+      props.setCourses(checkboxValues);
+    }
+  }, []);
+
   const course = props.courses.find((item) => item.id == props.id);
   if (course) {
     return (
@@ -195,10 +197,99 @@ export default function BasicTable() {
   const [sem, setSem] = useState(semValue ? semValue : "h1");
   const [searchCourses, setSearchCourses] = useState("");
 
+  // For Course Selection
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+  const CustomModal = () => {
+    const style = {
+      position: "absolute",
+      top: "50%",
+      left: "50%",
+      transform: "translate(-50%, -50%)",
+      width: "50%",
+      height: "50%",
+      bgcolor: "background.paper",
+      border: "2px solid #000",
+      boxShadow: 24,
+      p: 4,
+    };
+    return (
+      <Modal
+        key={"modal"}
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+        hideBackdrop={true}
+      >
+        <Box sx={style}>
+          <TextField
+            style={{ marginBottom: "5px" }}
+            fullWidth
+            margin="dense"
+            id="outlined-search"
+            variant="outlined"
+            label="Search Courses"
+            InputProps={{
+              startAdornment: (
+                <InputAdornment position="start">
+                  <SearchIcon variant="filled" />
+                </InputAdornment>
+              ),
+            }}
+            type="search"
+            onChange={(e) => {
+              setSearchCourses(e.target.value);
+            }}
+          />
+          <Box
+            id="checkbox-container"
+            pl={2}
+            style={{
+              float: "left",
+              width: "99%",
+              overflowY: "auto",
+              height: "75%",
+              border: "1px solid black",
+              marginBottom: "2px",
+            }}
+          >
+            {courses.map((item) => {
+              if (
+                item.name.toLowerCase().indexOf(searchCourses.toLowerCase()) !==
+                -1
+              )
+                return (
+                  <CustomCheckbox
+                    key={item.id}
+                    id={item.id}
+                    courses={courses}
+                    setCourses={setCourses}
+                    setSem={setSem}
+                  />
+                );
+            })}
+          </Box>
+          <Button
+            variant="contained"
+            color="primary"
+            onClick={() => {
+              clearAllPreferences();
+            }}
+          >
+            Clear Preferences
+          </Button>
+        </Box>
+      </Modal>
+    );
+  };
+
   return (
     <div>
-      <Topbar sem={sem} setSem={setSem} />
+      <Topbar sem={sem} setSem={setSem} handleOpen={handleOpen} />
       <div>
+        <CustomModal />
         <>
           <TableContainer component={Paper}>
             <Table className={classes.table} aria-label="simple table">
@@ -228,7 +319,6 @@ export default function BasicTable() {
                               (course) =>
                                 course.id == item.id && course.selected
                             );
-                            console.log(curCourse);
                             let tmp = null;
                             if (curCourse) {
                               if (curCourse.type != "common") {
@@ -284,16 +374,6 @@ export default function BasicTable() {
           <option value={"h1"}>H1</option>
           <option value={"h2"}>H2</option>
         </select>{" "} */}
-            <Button
-              variant="contained"
-              color="primary"
-              onClick={() => {
-                clearAllPreferences();
-              }}
-            >
-              Clear Preferences
-            </Button>
-            <hr />
             <div
               style={{
                 marginTop: "15px",
@@ -318,54 +398,6 @@ export default function BasicTable() {
                 })}
             </div>
             <hr />
-            <TextField
-              style={{ marginBottom: "5px" }}
-              fullWidth
-              margin="dense"
-              id="outlined-search"
-              variant="outlined"
-              label="Search Courses"
-              InputProps={{
-                startAdornment: (
-                  <InputAdornment position="start">
-                    <SearchIcon variant="filled" />
-                  </InputAdornment>
-                ),
-              }}
-              type="search"
-              onChange={(e) => {
-                setSearchCourses(e.target.value);
-              }}
-            />
-            <Box
-              id="checkbox-container"
-              pl={2}
-              style={{
-                float: "left",
-                width: "99%",
-                overflowY: "auto",
-                height: "150px",
-                border: "1px solid black",
-                marginBottom: "2px",
-              }}
-            >
-              {courses.map((item) => {
-                if (
-                  item.name
-                    .toLowerCase()
-                    .indexOf(searchCourses.toLowerCase()) !== -1
-                )
-                  return (
-                    <CustomCheckbox
-                      key={item.id}
-                      id={item.id}
-                      courses={courses}
-                      setCourses={setCourses}
-                      setSem={setSem}
-                    />
-                  );
-              })}
-            </Box>
           </div>
         </>
       </div>
