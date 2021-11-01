@@ -203,6 +203,9 @@ export default function BasicTable() {
   const handleClose = () => setOpen(false);
   const CustomModal = () => {
     const style = {
+      color: {
+        secondary: "#f50057",
+      },
       position: "absolute",
       top: "50%",
       left: "50%",
@@ -246,9 +249,8 @@ export default function BasicTable() {
           <Box
             id="checkbox-container"
             pl={2}
+            fullWidth
             style={{
-              float: "left",
-              width: "99%",
               overflowY: "auto",
               height: "75%",
               border: "1px solid black",
@@ -279,6 +281,9 @@ export default function BasicTable() {
             }}
           >
             Clear Preferences
+          </Button>
+          <Button variant="contained" color="secondary" onClick={handleClose}>
+            Close{" "}
           </Button>
         </Box>
       </Modal>
