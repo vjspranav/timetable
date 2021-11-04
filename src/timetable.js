@@ -104,6 +104,7 @@ const Topbar = ({ sem, setSem, handleOpen }) => {
                   onClick={() => {
                     setAnchorEl(null);
                     setSem("all");
+                    localStorage.setItem("semValue", "all");
                   }}
                   value={"all"}
                 >
@@ -113,6 +114,7 @@ const Topbar = ({ sem, setSem, handleOpen }) => {
                   onClick={() => {
                     setAnchorEl(null);
                     setSem("h1");
+                    localStorage.setItem("semValue", "h1");
                   }}
                   value={"h1"}
                 >
@@ -122,6 +124,7 @@ const Topbar = ({ sem, setSem, handleOpen }) => {
                   onClick={() => {
                     setAnchorEl(null);
                     setSem("h2");
+                    localStorage.setItem("semValue", "h2");
                   }}
                   value={"h2"}
                 >
