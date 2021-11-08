@@ -52,7 +52,7 @@ function clearAllPreferences() {
 }
 
 var checkboxValues = JSON.parse(localStorage.getItem("checkboxValues"));
-var semValue = JSON.parse(localStorage.getItem("semValue"));
+var semValue = localStorage.getItem("semValue");
 
 // Create a Responsive App Bar Component using Material UI
 // Position at the top of screen
