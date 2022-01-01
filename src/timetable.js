@@ -213,13 +213,13 @@ export default function BasicTable() {
   const [timetable, setTimetable] = useState(timetableData);
   const [courses, setCourses] = useState(coursesData);
   const [sem, setSem] = useState(semValue ? semValue : "h1");
-  const [searchCourses, setSearchCourses] = useState("");
 
   // For Course Selection
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   const CustomModal = () => {
+    const [searchCourses, setSearchCourses] = useState("");
     const style = {
       color: {
         secondary: "#f50057",
@@ -260,9 +260,9 @@ export default function BasicTable() {
               ),
             }}
             type="search"
-            onChange={(e) => {
-              setSearchCourses(e.target.value);
-            }}
+            value={searchCourses}
+            onChange={(e) => setSearchCourses(e.target.value)
+            }
           />
           <Box
             id="checkbox-container"
@@ -341,14 +341,12 @@ export default function BasicTable() {
                           if (curCourse.type != "common") {
                             if (sem != "all") {
                               if (curCourse.type == sem) {
-                                tmp = `${
-                                  curCourse.name
-                                } (${sem.toUpperCase()})`;
+                                tmp = `${curCourse.name
+                                  } (${sem.toUpperCase()})`;
                               }
                             } else {
-                              tmp = `${
-                                curCourse.name
-                              } (${curCourse.type.toUpperCase()})`;
+                              tmp = `${curCourse.name
+                                } (${curCourse.type.toUpperCase()})`;
                             }
                           } else {
                             tmp = curCourse.name;
