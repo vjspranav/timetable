@@ -1,3 +1,6 @@
+# TIME TABLE 
+Allows you to select your courses and render your personalised time table .
+
 ## How to run ?
 ### Fork the repository.
 ### Clone the repo to your local system
