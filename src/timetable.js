@@ -543,7 +543,9 @@ export default function BasicTable() {
         <CustomModal />
         <>
           <div>
-            {/* <select
+            {
+              
+              /* <select
           value={sem}
           onChange={(event) => {
             setSem(event.target.value);
@@ -556,7 +558,11 @@ export default function BasicTable() {
           <option value={"all"}>All</option>
           <option value={"h1"}>H1</option>
           <option value={"h2"}>H2</option>
-        </select>{" "} */}
+        </select>{" "} */
+            
+            }
+
+
             {/* <VerticalTimeTable /> */}
             {isDesktopOrLaptop && <HorizontalTimeTable />}
             {isTabletOrMobile && <VerticalTimeTable />}
